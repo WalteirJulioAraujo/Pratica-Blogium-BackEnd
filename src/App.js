@@ -5,29 +5,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const posts = [{
-    id: 1,
-    title: 'Hello World',
-    coverUrl: 'https://miro.medium.com/max/1024/1*OohqW5DGh9CQS4hLY5FXzA.png',
-    contentPreview: 'Esta é a estrutura de um post esperado pelo front-end',
-    content: 'Este é o conteúdo do post, o que realmente vai aparecer na página do post...',
-    commentCount: 2
-}];
+const posts = [];
 
-const comments =[{
-    id: 1,
-    postId: 1,
-    author: 'João',
-    content: 'Muito bom esse post! Tá de parabéns'
-  }, {
-    id: 2,
-    postId: 1,
-    author: 'Maria',
-    content: 'Como faz pra dar palmas?'
-}];
+const comments =[];
 
-let idComments = 3;
-let idPosts = 2;
+let idComments = 1;
+let idPosts = 1;
 
 app.get('/posts',(req,res)=>{
     res.send(posts);
